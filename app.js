@@ -1,7 +1,5 @@
 const createError                 = require('http-errors');
 const express                     = require('express');
-const bodyParser                  = require('body-parser');
-const { check, validationResult } = require('express-validator');
 const path                        = require('path');
 const cookieParser                = require('cookie-parser');
 const logger                      = require('morgan');
