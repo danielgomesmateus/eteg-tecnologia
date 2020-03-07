@@ -26,7 +26,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon /bin/www"
   },
   "author": "Daniel Gomes Mateus <contato@danielgmateus.com.br>",
   "license": "ISC"
