@@ -1,0 +1,33 @@
+{
+  "name": "eteg-tecnologia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "consign": "^0.1.6",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "cpf-cnpj-validator": "^1.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "helmet": "^3.21.3",
+    "http-errors": "^1.7.3",
+    "install": "^0.13.0",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.2",
+    "npm": "^6.14.2",
+    "path": "^0.12.7",
+    "sequelize": "^5.21.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Gomes Mateus <contato@danielgmateus.com.br>",
+  "license": "ISC"
+}
