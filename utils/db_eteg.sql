@@ -31,6 +31,7 @@ CREATE TABLE `locacao` (
   `usuario_id` int(11) NOT NULL,
   `data_locacao` date NOT NULL,
   `data_devolucao` date NOT NULL,
+  `renovacoes` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `filme_id` (`filme_id`),
   KEY `usuario_id` (`usuario_id`),
@@ -38,10 +39,15 @@ CREATE TABLE `locacao` (
   CONSTRAINT `locacao_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `locacao` (`id`, `filme_id`, `usuario_id`, `data_locacao`, `data_devolucao`) VALUES
-(2,	1,	4,	'2020-09-01',	'2020-11-19'),
-(3,	1,	1,	'2020-11-03',	'2020-11-06'),
-(4,	3,	1,	'2020-11-03',	'2020-11-06');
+INSERT INTO `locacao` (`id`, `filme_id`, `usuario_id`, `data_locacao`, `data_devolucao`, `renovacoes`) VALUES
+(2,	1,	4,	'2020-09-01',	'2020-11-15',	2),
+(3,	1,	1,	'2020-11-03',	'2020-11-06',	NULL),
+(4,	3,	1,	'2020-11-03',	'2020-11-06',	NULL),
+(28,	3,	11,	'2020-01-30',	'2020-02-02',	NULL),
+(29,	3,	11,	'2020-01-30',	'2020-02-02',	NULL),
+(30,	3,	11,	'2020-01-30',	'2020-02-02',	NULL),
+(31,	3,	11,	'2020-01-30',	'2020-02-02',	NULL),
+(32,	3,	11,	'2020-01-30',	'2020-02-02',	NULL);
 
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
@@ -60,4 +66,4 @@ INSERT INTO `usuario` (`id`, `nome`, `sexo`, `cpf`, `data_nascimento`) VALUES
 (11,	'Aretha Franklin',	'F',	'796.711.410-80',	'1942-03-24'),
 (12,	'Joe Bonamassa',	'M',	'810.338.130-60',	'1977-05-08');
 
--- 2020-03-07 21:58:02
+-- 2020-03-08 15:11:10
