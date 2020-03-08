@@ -5,7 +5,7 @@ module.exports.index = function(app, req, res) {
         res.status(200).json({action: 'success', result: users});
     })
     .catch(function (err) {
-        res.status(422).json({action: 'error', result: err});
+        res.status(422).json({action: 'error', result: err.message});
     });
 }
 
@@ -14,7 +14,7 @@ module.exports.get = function(app, req, res) {
         res.status(200).json({action: 'success', result: user});
     })
     .catch(function (err) {
-        res.status(422).json({action: 'error', result: err});
+        res.status(422).json({action: 'error', result: err.message});
     });
 }
 
@@ -23,7 +23,7 @@ module.exports.save = function(app, req, res) {
         res.status(200).json({action: 'success', result: user});
     })
     .catch(function (err) {
-        res.status(422).json({action: 'error', result: err});
+        res.status(422).json({action: 'error', result: err.message});
     });
 }
 
@@ -32,7 +32,7 @@ module.exports.update = function(app, req, res) {
         res.status(200).json({action: 'success', result: user});
     })
     .catch(function (err) {
-        res.status(422).json({action: 'error', result: err});
+        res.status(422).json({action: 'error', result: err.message});
     });
 }
 
@@ -41,6 +41,6 @@ module.exports.delete = function(app, req, res) {
         res.status(200).json({action: 'success', result: user});
     })
     .catch(function (err) {
-        res.status(422).json({action: 'error', result: err});
+        res.status(422).json({action: 'error', result: err.message});
     });
 }

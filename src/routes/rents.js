@@ -1,5 +1,4 @@
 const { check, validationResult } = require('express-validator');
-const RentModel = require('../models/rents')();
 
 module.exports = function(app) {
   app.get('/rents/', function(req, res) {
@@ -13,16 +12,8 @@ module.exports = function(app) {
   app.post('/rents/add/', 
     [
       check('filme_id')
-        .custom(value => {
-          return RentModel.findAndCountAll({ where: { filme_id: value }})
-            .then(rent => {
-              if(rent.count >= 5) {
-                return Promise.reject('Não é possível alugar mais de 5 filmes por vez.');
-              }
-              return Promise.resolve();
-            });
-        })
-        .withMessage("Não é possível alugar mais de 5 filmes por vez."),
+        .isDecimal()
+        .withMessage("ID do filme informado não é válido"),
       check('usuario_id')
         .isDecimal()
         .withMessage("ID do usuário informado não é válido."),

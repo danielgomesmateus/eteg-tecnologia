@@ -24,4 +24,4 @@ npm start
 docker-compose up
 ```
 4. Abaixo, segue endereço com a configuração no Postman para realizar os testes.
-(https://www.postman.com/collections/38abcea77ae0304716f9)
+(https://www.getpostman.com/collections/38abcea77ae0304716f9)
