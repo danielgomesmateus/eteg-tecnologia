@@ -1,7 +1,9 @@
 const RentModel = require('../models/rents')();
+const UserModel = require('../models/users')();
+const MovieModel = require('../models/movies')();
 
 module.exports.index = function(app, req, res) {
-    RentModel.findAll().then(rents => {
+    RentModel.findAll({ include: [UserModel, MovieModel] }).then(rents => {
         res.status(200).json({action: 'success', result: rents});
     })
     .catch(function (err) {
@@ -10,7 +12,7 @@ module.exports.index = function(app, req, res) {
 }
 
 module.exports.get = function(app, req, res) {
-    RentModel.findOne({ where: req.params }).then(rents => {
+    RentModel.findOne({ where: req.params, include: [UserModel, MovieModel] }).then(rents => {
         res.status(200).json({action: 'success', result: rents});
     })
     .catch(function (err) {

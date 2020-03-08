@@ -1,6 +1,9 @@
 const { Sequelize, sequelize } = require('../../config/db');
 const Model = Sequelize.Model;
 
+const UserModel = require('./users')();
+const MovieModel = require('./movies')();
+
 class Rent extends Model {}
 
 Rent.init({
@@ -46,6 +49,9 @@ Rent.init({
     }
   }
 });
+
+Rent.belongsTo(MovieModel, { foreignKey: 'filme_id' });
+Rent.belongsTo(UserModel, { foreignKey: 'usuario_id' });
 
 module.exports = function() {
   return Rent;

@@ -4,7 +4,13 @@ const Model = Sequelize.Model;
 class Movie extends Model {}
 
 Movie.init({
-   nome: {
+  id: {
+    primaryKey: true,
+    autoIncrement: true,
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  nome: {
     type: Sequelize.STRING(50),
     allowNull: false
   },
